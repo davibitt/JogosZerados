@@ -1,0 +1,931 @@
+// Lista de jogos zerados — editável. O app usa isso como base inicial.
+const SEED_GAMES = [
+ {
+  "id": "aladdin__snes",
+  "name": "Aladdin",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "aerotheacrobat2__snes",
+  "name": "Aero the Acrobat 2",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "choplifteriii__snes",
+  "name": "Choplifter III",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "congoscaper__snes",
+  "name": "Congo's Caper",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "contraiiithealienwars__snes",
+  "name": "Contra III: The Alien Wars",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "gooftroop__snes",
+  "name": "Goof Troop",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "mickeyminniemagicaladventure__snes",
+  "name": "Mickey & Minnie: Magical Adventure",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "mortalkombat__snes",
+  "name": "Mortal Kombat",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "mortalkombatii__snes",
+  "name": "Mortal Kombat II",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "mortalkombatiii__snes",
+  "name": "Mortal Kombat III",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "patetaemax__snes",
+  "name": "Pateta e Max",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "sonic__snes",
+  "name": "Sonic",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "streetfighterii__snes",
+  "name": "Street Fighter II",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "supermarioworld__snes",
+  "name": "Super Mario World",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "themagicalqueststarringmickeymouse__snes",
+  "name": "The Magical Quest Starring Mickey Mouse",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "tomjerry__snes",
+  "name": "Tom & Jerry",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "topgear__snes",
+  "name": "Top Gear",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "turnandburnnoflyzone__snes",
+  "name": "Turn and Burn: No-Fly Zone",
+  "console": "SNES",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "breathoffireiv__ps1",
+  "name": "Breath of Fire IV",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "castlevaniasymphonyofthenight__ps1",
+  "name": "Castlevania: Symphony of the Night",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "chronocross__ps1",
+  "name": "Chrono Cross",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "crashbandicoot3warped__ps1",
+  "name": "Crash Bandicoot 3: Warped",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "crashteamracing__ps1",
+  "name": "Crash Team Racing",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "digimonworld3__ps1",
+  "name": "Digimon World 3",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "donaldduckgoinquackers__ps1",
+  "name": "Donald Duck: Goin' Quackers",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "dragonballgtfinalbout__ps1",
+  "name": "Dragon Ball GT: Final Bout",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "dragonballzidainarudensetsu__ps1",
+  "name": "Dragon Ball Z: Idainaru Densetsu",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "driver2__ps1",
+  "name": "Driver 2",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "finalfantasyix__ps1",
+  "name": "Final Fantasy IX",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "granturismo__ps1",
+  "name": "Gran Turismo",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "harvestmoonbacktonature__ps1",
+  "name": "Harvest Moon: Back to Nature",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "marvelvscapcom__ps1",
+  "name": "Marvel vs. Capcom",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "megaman8__ps1",
+  "name": "Mega Man 8",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "megamanx5__ps1",
+  "name": "Mega Man X5",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "megamanx6__ps1",
+  "name": "Mega Man X6",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "medalofhonor__ps1",
+  "name": "Medal of Honor",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "rurounikenshinishingekitouhen__ps1",
+  "name": "Rurouni Kenshin: Ishin Gekitouhen",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "spiderman2enterelectro__ps1",
+  "name": "Spider-Man 2: Enter Electro",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "tarzan__ps1",
+  "name": "Tarzan",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "tekken3__ps1",
+  "name": "Tekken 3",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "tomandjerryinhousetrap__ps1",
+  "name": "Tom and Jerry in House Trap",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "vandalhearts__ps1",
+  "name": "Vandal Hearts",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "yugiohforbiddenmemories__ps1",
+  "name": "Yu-Gi-Oh! Forbidden Memories",
+  "console": "PS1",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "batmanbegins__ps2",
+  "name": "Batman Begins",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "black__ps2",
+  "name": "Black",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "castlevaniacurseofdarkness__ps2",
+  "name": "Castlevania: Curse of Darkness",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "devilmaycry3__ps2",
+  "name": "Devil May Cry 3",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "drakengard__ps2",
+  "name": "Drakengard",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "drakengard2__ps2",
+  "name": "Drakengard 2",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "finalfantasyviidirgeofcerberus__ps2",
+  "name": "Final Fantasy VII: Dirge of Cerberus",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "godofwar__ps2",
+  "name": "God of War",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "godofwarii__ps2",
+  "name": "God of War II",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "granturismo4__ps2",
+  "name": "Gran Turismo 4",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "guitarhero__ps2",
+  "name": "Guitar Hero",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "guitarheroii__ps2",
+  "name": "Guitar Hero II",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "guitarheroiii__ps2",
+  "name": "Guitar Hero III",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "guitarheroworldtour__ps2",
+  "name": "Guitar Hero World Tour",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "guitarherosmashhits__ps2",
+  "name": "Guitar Hero Smash Hits",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "metalgearsolid2__ps2",
+  "name": "Metal Gear Solid 2",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "metalgearsolid3__ps2",
+  "name": "Metal Gear Solid 3",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "narutouzumakichronicles2__ps2",
+  "name": "Naruto: Uzumaki Chronicles 2",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "narutoshippudenultimateninja__ps2",
+  "name": "Naruto Shippuden: Ultimate Ninja",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "needforspeedprostreet__ps2",
+  "name": "Need for Speed: ProStreet",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "onimusha3demonsiege__ps2",
+  "name": "Onimusha 3: Demon Siege",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "princeofpersiathesandsoftime__ps2",
+  "name": "Prince of Persia: The Sands of Time",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "soulcaliburiii__ps2",
+  "name": "SoulCalibur III",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "tenchu3__ps2",
+  "name": "Tenchu 3",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "virtuatennis2__ps2",
+  "name": "Virtua Tennis 2",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "residentevil4__ps2",
+  "name": "Resident Evil 4",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "saintseiyathehades__ps2",
+  "name": "Saint Seiya: The Hades",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "shadowofthecolossus__ps2",
+  "name": "Shadow of the Colossus",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "sonicriders__ps2",
+  "name": "Sonic Riders",
+  "console": "PS2",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "hackgulastrecode__pc",
+  "name": ".hack//G.U. Last Recode",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "batmanarkhamasylum__pc",
+  "name": "Batman: Arkham Asylum",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "beyondtwosouls__pc",
+  "name": "Beyond: Two Souls",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "bloodstainedritualofthenight__pc",
+  "name": "Bloodstained: Ritual of the Night",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "chronotrigger__pc",
+  "name": "Chrono Trigger",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "clairobscurexpedition33__pc",
+  "name": "Clair Obscur: Expedition 33",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "crosscode__pc",
+  "name": "CrossCode",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "cyberpunk2077__pc",
+  "name": "Cyberpunk 2077",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "darksiders__pc",
+  "name": "DarkSiders",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "darksiderswarmasterededition__pc",
+  "name": "Darksiders Warmastered Edition",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "deadspace2008__pc",
+  "name": "Dead Space (2008)",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "deathstranding__pc",
+  "name": "Death Stranding",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "deathstrandingdirectorscut__pc",
+  "name": "Death Stranding Director's Cut",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "detroitbecomehuman__pc",
+  "name": "Detroit: Become Human",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "devilmaycry4specialedition__pc",
+  "name": "Devil May Cry 4 Special Edition",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "devilmaycry5__pc",
+  "name": "Devil May Cry 5",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "dishonored__pc",
+  "name": "Dishonored",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "finalfantasyxiithezodiacage__pc",
+  "name": "Final Fantasy XII: The Zodiac Age",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "godofwar__pc",
+  "name": "God of War",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "grandtheftautov__pc",
+  "name": "Grand Theft Auto V",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "heavyrain__pc",
+  "name": "Heavy Rain",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "hellbladesenuassacrifice__pc",
+  "name": "Hellblade: Senua's Sacrifice",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "layersoffear2016__pc",
+  "name": "Layers of Fear (2016)",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "lifeisstrange__pc",
+  "name": "Life Is Strange",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "megaman11__pc",
+  "name": "Mega Man 11",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "megamanx8__pc",
+  "name": "Mega Man X8",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "metalgearrisingrevengeance__pc",
+  "name": "Metal Gear Rising: Revengeance",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "metalgearsolidvgroundzeroes__pc",
+  "name": "Metal Gear Solid V: Ground Zeroes",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "metalgearsolidvthephantompain__pc",
+  "name": "Metal Gear Solid V: The Phantom Pain",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "middleearthshadowofmordor__pc",
+  "name": "Middle-earth: Shadow of Mordor",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "middleearthshadowofwar__pc",
+  "name": "Middle-earth: Shadow of War",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "monsterhunterworld__pc",
+  "name": "Monster Hunter: World",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "nomanssky__pc",
+  "name": "No Man's Sky",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "pathofexile__pc",
+  "name": "Path of Exile",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "portal__pc",
+  "name": "Portal",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "portal2__pc",
+  "name": "Portal 2",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "riseofthetombraider__pc",
+  "name": "Rise of the Tomb Raider",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "seaofstars__pc",
+  "name": "Sea of Stars",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "shadowofthetombraider__pc",
+  "name": "Shadow of the Tomb Raider",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "stardewvalley__pc",
+  "name": "Stardew Valley",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "talesofberseria__pc",
+  "name": "Tales of Berseria",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "tellmewhy__pc",
+  "name": "Tell Me Why",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "themessenger__pc",
+  "name": "The Messenger",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ },
+ {
+  "id": "tombraider2013__pc",
+  "name": "Tomb Raider (2013)",
+  "console": "PC",
+  "year": "",
+  "cover": "",
+  "wikiTitle": ""
+ }
+];

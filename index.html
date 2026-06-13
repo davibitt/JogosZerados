@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameList — Jogos Zerados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">GAME<span>LIST</span></div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="stat-games">0</div><div class="stat-label">Zerados</div></div>
+    <div class="stat"><div class="stat-num" id="stat-consoles">0</div><div class="stat-label">Consoles</div></div>
+  </div>
+  <div class="sync-status">
+    <span class="dot" id="status-dot"></span>
+    <span id="status-msg">Carregando...</span>
+  </div>
+</header>
+
+<nav class="tabs" id="platform-tabs"></nav>
+
+<div class="toolbar">
+  <div class="search-box">
+    <input type="text" id="filter-input" placeholder="Filtrar jogos...">
+  </div>
+  <button class="btn btn-primary" id="btn-add">+ Adicionar</button>
+  <button class="btn btn-ghost" id="btn-export" title="Baixar backup .json">⬇ Backup</button>
+  <button class="btn btn-ghost" id="btn-import" title="Importar backup .json">⬆ Importar</button>
+  <button class="btn btn-ghost" id="btn-settings" title="Configurar sincronização com GitHub">⚙ GitHub</button>
+  <input type="file" id="import-file" accept=".json" hidden>
+</div>
+
+<main class="catalog" id="catalog"></main>
+
+<!-- MODAL: ADICIONAR -->
+<div class="overlay" id="add-overlay" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Adicionar Jogo</div>
+      <button class="modal-close" data-close="add-overlay">✕</button>
+    </div>
+    <div class="modal-body">
+      <label class="field-label">Console</label>
+      <select id="add-console"></select>
+      <label class="field-label">Buscar Jogo</label>
+      <div class="search-row">
+        <input type="text" id="add-query" placeholder="Ex: Final Fantasy" autocomplete="off">
+        <button class="btn btn-primary" id="btn-search">Buscar</button>
+      </div>
+      <div class="search-feedback" id="search-feedback" hidden></div>
+      <div class="results" id="search-results" hidden></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-close="add-overlay">Cancelar</button>
+      <button class="btn btn-primary" id="btn-confirm" disabled>Adicionar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: DETALHES DO JOGO -->
+<div class="overlay" id="detail-overlay" hidden>
+  <div class="modal modal-detail">
+    <button class="modal-close detail-close" data-close="detail-overlay">✕</button>
+    <div class="detail-content" id="detail-content"></div>
+  </div>
+</div>
+
+<!-- MODAL: CONFIG GITHUB -->
+<div class="overlay" id="settings-overlay" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Sincronização com GitHub</div>
+      <button class="modal-close" data-close="settings-overlay">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="settings-help">
+        A lista fica salva num arquivo <code>games.json</code> do seu repositório.
+        Cada alteração vira um commit automático. Qualquer dispositivo configurado lê e grava no mesmo arquivo.
+      </p>
+      <label class="field-label">Repositório (usuario/repo)</label>
+      <input type="text" id="cfg-repo" placeholder="ex: fulano/gamelist" autocomplete="off">
+      <label class="field-label">Branch</label>
+      <input type="text" id="cfg-branch" placeholder="main" autocomplete="off">
+      <label class="field-label">Token de acesso (fine-grained)</label>
+      <input type="text" id="cfg-token" placeholder="github_pat_..." autocomplete="off">
+      <p class="settings-help small">
+        Crie em: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens.<br>
+        Repository access: <b>só este repositório</b>. Permissions: <b>Contents → Read and write</b>.<br>
+        ⚠️ O token fica salvo <b>somente neste navegador</b>. Nunca cole ele em arquivos do repositório.
+      </p>
+      <div class="settings-feedback" id="cfg-feedback" hidden></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" id="cfg-disconnect">Desconectar</button>
+      <button class="btn btn-ghost" data-close="settings-overlay">Cancelar</button>
+      <button class="btn btn-primary" id="cfg-save">Testar e Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="games-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
